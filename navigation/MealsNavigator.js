@@ -49,7 +49,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const MealsNavigationTab = () => {
   return (
-    <Tab.Navigator shifting={true}>
+    <Tab.Navigator>
       <Tab.Screen
         name="Meals"
         component={MealsNavigator}
