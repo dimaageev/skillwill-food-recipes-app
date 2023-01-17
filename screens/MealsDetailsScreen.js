@@ -1,6 +1,5 @@
 import React, {useCallback} from 'react'
 import {Image, StyleSheet, Text, View, ScrollView} from 'react-native'
-import {useDispatch, useSelector} from 'react-redux'
 import HeaderButton from '../components/HeaderButton'
 import {toggleFavorite} from '../store/actions/meals'
 
