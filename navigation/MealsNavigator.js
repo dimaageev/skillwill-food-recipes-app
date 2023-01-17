@@ -1,7 +1,8 @@
 import React from 'react'
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs'
+
 import {createDrawerNavigator} from '@react-navigation/drawer'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
 import CategoriesScreen from '../screens/CategoriesScreen'
 import CategoryMealsScreen from '../screens/CategoryMealsScreen'
@@ -45,7 +46,7 @@ const FavoritesNavigator = () => {
    )
 }
 
-const Tab = createMaterialBottomTabNavigator()
+const Tab = createBottomTabNavigator()
 
 const MealsNavigationTab = () => {
    return (
@@ -76,7 +77,7 @@ const MealsNavigationTab = () => {
 
 const FiltersNavigation = () => {
    return (
-      <Stack.Navigator screenOptions={defaultStackNavOptions}>
+      <Stack.Navigator screenOptions={{}}>
          <Stack.Screen name="FiltersScreen" component={FiltersScreen} />
       </Stack.Navigator>
    )
