@@ -1,7 +1,6 @@
 import React, {useCallback} from 'react'
 import {Image, StyleSheet, Text, View, ScrollView} from 'react-native'
 import HeaderButton from '../components/HeaderButton'
-import {toggleFavorite} from '../store/actions/meals'
 
 import {LogBox} from 'react-native'
 LogBox.ignoreLogs([
