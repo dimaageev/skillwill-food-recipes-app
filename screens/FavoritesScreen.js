@@ -1,7 +1,15 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {
+   View,
+   Text,
+   StyleSheet,
+   Platform,
+   Button,
+   ActionSheetIOS
+} from 'react-native'
 import HeaderButton from '../components/HeaderButton'
 import MealList from '../components/MealList'
+import {CancelButton, ConfirmButton} from '../components/Buttons'
 
 const FavoritesScreen = (props) => {
    //    React.useLayoutEffect(() => {
@@ -26,14 +34,49 @@ const FavoritesScreen = (props) => {
    //    )
    // }
 
-   return <MealList listData={[]} navigation={props.navigation} />
+   const onPress = () => {
+      Platform.OS === 'ios'
+         ? ActionSheetIOS.showActionSheetWithOptions(
+              {
+                 options: ['Cancel', 'Generate number', 'Reset'],
+                 destructiveButtonIndex: 2,
+                 cancelButtonIndex: 0,
+                 userInterfaceStyle: 'dark'
+              },
+              (buttonIndex) => {}
+           )
+         : console.log('i cant')
+   }
+   return (
+      <View style={styles.content}>
+         <CancelButton containerStyle={styles.CancelStyle} title={'Cancel'} />
+         <ConfirmButton containerStyle={styles.CancelStyle} title={'Confirm'} />
+         {/* {Platform.OS === 'ios' ? <Text>IOS</Text> : <Text>Andrid</Text>} */}
+         {/* <MealList listData={[]} navigation={props.navigation} /> */}
+      </View>
+   )
 }
 
 const styles = StyleSheet.create({
    content: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      ...Platform.select({
+         ios: {
+            backgroundColor: 'red'
+         },
+         android: {
+            backgroundColor: 'blue'
+         }
+      })
+   },
+   CancelStyle: {
+      borderWidth: 1,
+      borderColor: 'blue',
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+      borderRadius: 50
    }
 })
 

@@ -7,7 +7,10 @@ const Stack = createNativeStackNavigator()
 
 export const FavoritesNavigator = () => {
    return (
-      <Stack.Navigator>
+      <Stack.Navigator
+         screenOptions={{
+            headerShown: false
+         }}>
          <Stack.Screen name="FavoritesTab" component={FavoritesScreen} />
          <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
       </Stack.Navigator>

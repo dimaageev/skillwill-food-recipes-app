@@ -1,5 +1,14 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {
+   View,
+   Text,
+   StyleSheet,
+   Platform,
+   Button,
+   DatePickerIOSBase,
+   DatePickerIOSComponent,
+   TextInput
+} from 'react-native'
 import MealList from '../components/MealList'
 import {CATEGORIES} from '../data/dummy-data'
 
@@ -12,7 +21,12 @@ const CategoryMealsScreen = (props) => {
    //       })
    //    }, [props.navigation])
 
-   return <MealList listData={[]} navigation={props.navigation} />
+   // return <MealList listData={[]} navigation={props.navigation} />
+   return (
+      <View style={styles.content}>
+         <Text>Meals Category Ios</Text>
+      </View>
+   )
 }
 
 const styles = StyleSheet.create({
