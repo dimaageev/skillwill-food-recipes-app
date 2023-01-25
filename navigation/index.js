@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {
    CardStyleInterpolators,
@@ -65,3 +66,6 @@ const StackNavigatorBeforeAuth = () => {
 }
 
 export default index
+=======
+export {default as DrawerNavigator} from './DrawerNavigator'
+>>>>>>> 54913dffd503213068e437c541cc606a23b6d4d1

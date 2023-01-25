@@ -23,7 +23,7 @@ const MealList = (props) => {
 
    return (
       <View style={styles.screen}>
-         <Text style={{alignSelf: 'center'}}> MealList </Text>
+         <Text style={{alignSelf: 'center'}}> Favorites </Text>
          {/* <FlatList
             data={props.listData}
             renderItem={renderMealItem}
