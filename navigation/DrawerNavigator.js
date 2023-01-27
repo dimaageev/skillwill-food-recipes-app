@@ -3,6 +3,7 @@ import BottomTabNavigator from './TabNavigator/TabNavigator'
 import FiltersNavigation from './FiltersNavigation'
 import StateManagement from '../screens/StateManagement'
 import ThemeManagement from '../screens/ThemeManagement'
+import ImmutableState from '../screens/ImmutableState'
 
 const Drawer = createDrawerNavigator()
 
@@ -21,6 +22,7 @@ const DrawerNavigator = () => {
          <Drawer.Screen name="Filters" component={FiltersNavigation} />
          <Drawer.Screen name="State" component={StateManagement} />
          <Drawer.Screen name="Theme" component={ThemeManagement} />
+         <Drawer.Screen name="Immutable" component={ImmutableState} />
       </Drawer.Navigator>
    )
 }
