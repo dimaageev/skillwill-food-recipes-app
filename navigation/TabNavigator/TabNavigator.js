@@ -19,7 +19,7 @@ const BottomTabNavigator = () => {
             options={{
                title: 'Home',
                tabBarIcon: () => (
-                  <Ionicons name="ios-restaurant" size={24} color="black" />
+                  <Ionicons name="restaurant-outline" size={24} color="black" />
                )
             }}
          />
@@ -29,7 +29,7 @@ const BottomTabNavigator = () => {
             options={{
                title: 'Favorites',
                tabBarIcon: () => (
-                  <Ionicons name="ios-star" size={24} color="black" />
+                  <Ionicons name="ios-star-outline" size={24} color="black" />
                )
             }}
          />

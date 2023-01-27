@@ -33,7 +33,7 @@ function MyTabBar({state, descriptors, navigation, position}) {
             <Animated.View
                style={[
                   {
-                     backgroundColor: '#673ab7',
+                     backgroundColor: '#b299df',
                      height: 60,
                      width: 60,
                      borderRadius: 60,
