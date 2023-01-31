@@ -20,9 +20,6 @@ const DrawerNavigator = () => {
             options={{drawerLabel: 'Meals'}}
          />
          <Drawer.Screen name="Filters" component={FiltersNavigation} />
-         <Drawer.Screen name="State" component={StateManagement} />
-         <Drawer.Screen name="Theme" component={ThemeManagement} />
-         <Drawer.Screen name="Immutable" component={ImmutableState} />
       </Drawer.Navigator>
    )
 }
