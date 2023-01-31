@@ -3,14 +3,17 @@ import React, {useState} from 'react'
 import Button from '../components/Button'
 import colors from '../consts/colors'
 
-const store = {value: 0}
+export const store = {value: 0}
 
 const ImmutableState = () => {
+   const [state, setState] = useState(store)
+
    return (
       <View style={st.container}>
          <Button
             onPress={() => {
                store.value = store.value + 1
+               setState({...store})
             }}
             title="change state"
          />

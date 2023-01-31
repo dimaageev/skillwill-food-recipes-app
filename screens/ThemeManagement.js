@@ -2,22 +2,27 @@ import {View, Text, StyleSheet, Switch} from 'react-native'
 import React, {useState} from 'react'
 import Button from '../components/Button'
 import colors from '../consts/colors'
-
+import {GlobalState} from '../context'
+import {useSelector, useDispatch} from 'react-redux'
 const LIGHT = 'light'
 const DARK = 'dark'
 
-const ThemeManagement = () => {
-   const [theme, setTheme] = useState(LIGHT)
+import {toggleTheme} from '../store/themeSlice'
 
-   const toggleSwitch = () =>
-      setTheme((prev) => (prev === LIGHT ? DARK : LIGHT))
+const ThemeManagement = () => {
+   // const {theme, toggleTheme} = useContext(GlobalState)
+
+   const {theme} = useSelector((root) => root)
+   const dispatch = useDispatch()
+
+   const toggleSwitch = () => dispatch(toggleTheme())
 
    return (
       <View style={st.container}>
          <Text>{theme} Theme Enabled</Text>
          <Switch onValueChange={toggleSwitch} value={theme === LIGHT} />
 
-         {/* <FirstChild /> */}
+         <FirstChild />
       </View>
    )
 }
@@ -33,16 +38,20 @@ const FirstChild = () => {
 }
 
 const SecondChild = () => {
+   const {theme} = useSelector((root) => root)
+
    return (
       <View
          style={{
-            backgroundColor: colors.gray, //theme === LIGHT ? 'white' : colors.gray,          style={{color: theme === 'light' ? 'black' : 'white'}}
+            backgroundColor: theme === LIGHT ? 'white' : colors.gray,
             height: 80,
             width: 80,
             justifyContent: 'center',
             alignItems: 'center'
          }}>
-         <Text style={{color: 'white'}}>I am nested child</Text>
+         <Text style={{color: theme === 'light' ? 'black' : 'white'}}>
+            I am nested child
+         </Text>
       </View>
    )
 }
