@@ -12,7 +12,8 @@ const BottomTabNavigator = () => {
       <Tab.Navigator
          tabBarPosition="bottom"
          tabBar={(props) => <MyTabBar {...props} />}
-         screenOptions={{headerShown: false}}>
+         // screenOptions={{headerShown: true}}
+      >
          <Tab.Screen
             name="MealsStack"
             component={MealsNavigator}

@@ -2,8 +2,22 @@ import React from 'react'
 import {FlatList, StyleSheet, Text} from 'react-native'
 import CategoryGridItem from '../components/CategoryGridItem'
 import {CATEGORIES} from '../data/dummy-data'
+import HeaderButton from '../components/HeaderButton'
 
 const CategoriesScreen = (props) => {
+   React.useLayoutEffect(() => {
+      props.navigation.setOptions({
+         headerLeft: () => (
+            <HeaderButton
+               iconName="ios-menu-outline"
+               onPress={() => {
+                  props.navigation.openDrawer()
+               }}
+            />
+         )
+      })
+   }, [])
+
    const renderGridItem = (itemData) => {
       return (
          <CategoryGridItem
@@ -20,7 +34,7 @@ const CategoriesScreen = (props) => {
    }
 
    return (
-      <FlatList data={CATEGORIES} renderItem={renderGridItem} numColumns={2}  />
+      <FlatList data={CATEGORIES} renderItem={renderGridItem} numColumns={2} />
    )
 }
 

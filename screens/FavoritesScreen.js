@@ -49,6 +49,9 @@ const FavoritesScreen = (props) => {
    }
    return (
       <View style={styles.content}>
+         <Button title="Press me" />
+         <Button title="Press me" />
+         <Button title="Press me" />
          <CancelButton containerStyle={styles.CancelStyle} title={'Cancel'} />
          <ConfirmButton containerStyle={styles.CancelStyle} title={'Confirm'} />
          {/* {Platform.OS === 'ios' ? <Text>IOS</Text> : <Text>Andrid</Text>} */}
