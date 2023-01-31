@@ -13,7 +13,7 @@ const DrawerNavigator = () => {
          screenOptions={{
             headerShown: false
          }}
-         initialRouteName="Theme">
+         initialRouteName="State">
          <Drawer.Screen
             name="MealFavorites"
             component={BottomTabNavigator}
