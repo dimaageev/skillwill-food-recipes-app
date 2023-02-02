@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+
 import {Animated, Dimensions, View, TouchableOpacity, Text} from 'react-native'
 
 const {width} = Dimensions.get('screen')

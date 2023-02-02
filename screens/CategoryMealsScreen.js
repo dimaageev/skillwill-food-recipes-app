@@ -1,18 +1,33 @@
-import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import React, {useEffect, useState} from 'react'
+
+import {
+   View,
+   Text,
+   StyleSheet,
+   Platform,
+   Button,
+   DatePickerIOSBase,
+   DatePickerIOSComponent,
+   TextInput
+} from 'react-native'
 import MealList from '../components/MealList'
-import {CATEGORIES} from '../data/dummy-data'
+import {CATEGORIES, MEALS} from '../data/dummy-data'
 
 const CategoryMealsScreen = (props) => {
-   const {categoryId} = props.route.params
+   const {categoryId, title} = props.route.params
+   const [Data, setData] = useState([])
+   React.useLayoutEffect(() => {
+      props.navigation.setOptions({
+         headerTitle: title
+      })
+   }, [props.navigation])
 
-   //    React.useLayoutEffect(() => {
-   //       props.navigation.setOptions({
-   //          headerTitle: selectedCategory.title
-   //       })
-   //    }, [props.navigation])
+   React.useEffect(() => {
+      const array = MEALS.filter((e) => e.categoryIds.includes(categoryId))
+      setData(array)
+   }, [props.route.params])
 
-   return <MealList listData={[]} navigation={props.navigation} />
+   return <MealList listData={Data} navigation={props.navigation} />
 }
 
 const styles = StyleSheet.create({
